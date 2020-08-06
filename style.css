@@ -15,7 +15,12 @@ body {
     background-size: cover;
 }
 h1 {
-    color: rgba(255,99,71,1);
+    color: moccasin;
+    position: relative;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    text-shadow: 3px 4px black;
 }
 
 strong {
@@ -40,8 +45,22 @@ h5 {
     margin-bottom: 5%;
     border-radius: 25px;
 }
+
+.row {
+   
+   display: flex;
+  justify-content: space-evenly;
+    }
+
+
+
+
 .picture {
+    
     border-radius: 25px;
+    width: 300px; height: 350px;
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
 }
 .picture1 {
     margin-right: 2%;
@@ -49,8 +68,13 @@ h5 {
 
 .picture2 {
     margin-left: 2%;
+   
 }
 .btn-primary {
     background-color: rgba(255,99,71,1);
     border: none;
+}
+.container {
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
 }
