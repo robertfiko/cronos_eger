@@ -29,6 +29,7 @@ strong {
 
 h5 {
     color: rgba(255,99,71,1);
+    ;
 }
 
 .link {
@@ -47,12 +48,9 @@ h5 {
 }
 
 .row {
-   
-   display: flex;
+    display: flex;
   justify-content: space-evenly;
     }
-
-
 
 
 .picture {
@@ -61,6 +59,7 @@ h5 {
     width: 300px; height: 350px;
     -webkit-filter: blur(3px);
     filter: blur(3px);
+    box-shadow: 0 2 2px black;
 }
 .picture1 {
     margin-right: 2%;
@@ -73,8 +72,43 @@ h5 {
 .btn-primary {
     background-color: rgba(255,99,71,1);
     border: none;
+     }
+.pic {
+    display: block;
+    padding-bottom: 2%;
+    padding-right: 5%;
+    width: 300px;
+    height: auto;
+}
+
+.button {
+   display: flex;
+    justify-content: space-between;
 }
 .container {
     text-align: justify;
     font-family: 'Roboto', sans-serif;
 }
+
+.contain1 {
+    position: relative;
+}
+
+.text-block1 {
+    position: absolute;
+    top: 0.05%;
+    left: 0.05%;
+    background-color: rgba(255,99,71,1);
+    color: moccasin;
+    padding-top: 1.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    
+  }
+
+  .ul {
+      padding-bottom: 5%;
+
+  }
