@@ -87,6 +87,13 @@ h5 {
     cursor: pointer;
      }
 
+.btn-success {
+        background-color: rgba(255,99,71,1);
+        border: none;
+        cursor: pointer;
+        color: white;
+         }
+    
 
 .button {
    display: flex;
