@@ -1,9 +1,6 @@
 <?php
 require_once "secure/key.php";
-echo "mailing";
 if (isset($_POST['sendbtn'])) {
-
-    echo "isseted";
 
     //
     //      RECAPTCHA VERIFICATION
@@ -35,7 +32,7 @@ if (isset($_POST['sendbtn'])) {
         echo '<p>Kérlem figyeljen oda, a "Nem vagyok rorot" jelölőnégyzet kitöltésekor.</p>';
     } else if ($captcha_success->success==true) {
 
-        $to = "fiko.robert@gmail.com";
+        $to = "nagy.agnes@ctk.hu";
         $subject = "EgerTárs - ".$_POST['name'];
 
         $message = "
@@ -44,7 +41,7 @@ if (isset($_POST['sendbtn'])) {
                     <title>EgerTárs Kapcsolat felévtel</title>
                 </head>
                 <body>
-                    <p>Kedves IrodavezetŐ!</p>
+                    <p>Kedves Irodavezető!</p>
                     <p>Kapcsolatfelvétel történt az alábbi adatokkal: </p>
                     <table>
                         <tr>
@@ -62,6 +59,7 @@ if (isset($_POST['sendbtn'])) {
                     </table>
                     <p>Üzenet: </p>
                     <pre>".$_POST['msg']."</pre>
+                    <h3>Az üzenetre való válaszolással az ÜGYFÉLNEK válaszolhatsz!</h3>
                 </body>
             </html>
 ";
@@ -75,6 +73,9 @@ if (isset($_POST['sendbtn'])) {
         $headers .= 'Sender: mailserver@fiko.hu' . "\r\n";
 
         mail($to, $subject, $message, $headers);
+        echo '<p>Levél küldés sikeres!</p>';
+        echo '<meta http-equiv="refresh" content="2; url=http://egertarskereso.hu">';
+
 
 
     }

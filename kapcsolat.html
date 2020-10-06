@@ -59,25 +59,25 @@
 
             <h5>Írj nekem!</h5>
 
-            <form method="POST" action="mailHandler.php?msgtype=basic">
+            <form method="POST" action="mailHandler.php?msgtype=basic" id="contactform">
                 <div class="form-group">
                     <label for="name">Név</label>
-                    <input type="text" class="form-control" id="name" name="name" aria-describedby="exampleName">
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="exampleName" required>
                     <small id="exampleName" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="email">Email cím</label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="email" name="email" required>
                     <small id="emailHelp" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="phone">Telefonszám</label>
-                    <input type="phone" class="form-control" id="phone" name="phone" aria-describedby="phone">
+                    <input type="phone" class="form-control" id="phone" name="phone" aria-describedby="phone" required>
                     <small id="phonex" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="msg">Üzenet</label>
-                    <textarea name="uzenet" id="msg" name="msg" class="form-control" rows="10"></textarea>
+                    <textarea id="msg" name="msg" class="form-control" rows="10" form="contactform" ></textarea>
                     <small id="uzenet" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
