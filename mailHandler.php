@@ -1,6 +1,9 @@
 <?php
 require_once "secure/key.php";
+echo "mailing";
 if (isset($_POST['sendbtn'])) {
+
+    echo "isseted";
 
     //
     //      RECAPTCHA VERIFICATION
@@ -29,9 +32,51 @@ if (isset($_POST['sendbtn'])) {
 
     if ($captcha_success->success==false) {
 
-        echo "<p>You are a bot! Go away!</p>";
+        echo '<p>Kérlem figyeljen oda, a "Nem vagyok rorot" jelölőnégyzet kitöltésekor.</p>';
     } else if ($captcha_success->success==true) {
-        echo "<p>You are not not a bot!</p>";
+
+        $to = "fiko.robert@gmail.com";
+        $subject = "EgerTárs - ".$_POST['name'];
+
+        $message = "
+            <html>
+                <head>
+                    <title>EgerTárs Kapcsolat felévtel</title>
+                </head>
+                <body>
+                    <p>Kedves IrodavezetŐ!</p>
+                    <p>Kapcsolatfelvétel történt az alábbi adatokkal: </p>
+                    <table>
+                        <tr>
+                            <td>Név: </td>
+                            <td>".$_POST['name']."</td>
+                        </tr>
+                        <tr>
+                            <td>E-mail cím: </td>
+                            <td>".$_POST['email']."</td>
+                        </tr>
+                        <tr>
+                            <td>Telefon: </td>
+                            <td>".$_POST['phone']."</td>
+                        </tr>
+                    </table>
+                    <p>Üzenet: </p>
+                    <pre>".$_POST['msg']."</pre>
+                </body>
+            </html>
+";
+
+// Always set content-type when sending HTML email
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+        $headers .= 'From: '.$_POST['name'].'<'.$_POST['email'].'>' . "\r\n";
+        $headers .= 'Sender: mailserver@fiko.hu' . "\r\n";
+
+        mail($to, $subject, $message, $headers);
+
+
     }
 
 }

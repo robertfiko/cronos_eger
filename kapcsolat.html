@@ -62,17 +62,22 @@
             <form method="POST" action="mailHandler.php?msgtype=basic">
                 <div class="form-group">
                     <label for="name">Név</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="exampleName">
+                    <input type="text" class="form-control" id="name" name="name" aria-describedby="exampleName">
                     <small id="exampleName" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="email">Email cím</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
                     <small id="emailHelp" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
+                    <label for="phone">Telefonszám</label>
+                    <input type="phone" class="form-control" id="phone" name="phone" aria-describedby="phone">
+                    <small id="phonex" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
                     <label for="msg">Üzenet</label>
-                    <textarea name="uzenet" id="msg" class="form-control" rows="10"></textarea>
+                    <textarea name="uzenet" id="msg" name="msg" class="form-control" rows="10"></textarea>
                     <small id="uzenet" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
@@ -86,7 +91,7 @@
                 <p>Az üzenet elküldésével elfogadod a Cronos Társkereső Iroda
                     <a class="link" href="https://tarskereso.ctk.hu/adatvedelem/" target="_blank">adatvédelmi
                         szabályzatát!</a></p>
-                <button type="submit" id="sendbtn" class="btn btn-primary">Üzenet küldése</button>
+                <button type="submit" id="sendbtn" name="sendbtn" class="btn btn-primary">Üzenet küldése</button>
                 <p></p>
                 <div>
                     <iframe allowfullscreen="" frameborder="0"
