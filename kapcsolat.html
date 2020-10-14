@@ -15,6 +15,50 @@
 
     <title>Cronos Egri Társkereső Iroda</title>
 
+    <script>
+        var $_GET = {};
+        if(document.location.toString().indexOf('?') !== -1) {
+            var query = document.location
+                .toString()
+                // get the query string
+                .replace(/^.*?\?/, '')
+                // and remove any existing hash string (thanks, @vrijdenker)
+                .replace(/#.*$/, '')
+                .split('&');
+
+            for(var i=0, l=query.length; i<l; i++) {
+                var aux = decodeURIComponent(query[i]).split('=');
+                $_GET[aux[0]] = aux[1];
+            }
+        }
+        //get the 'index' query parameter
+        let before = "Kedves Irodavezető!\nSzeretnék további információkat megtudni a ";
+        let after = " csomagjukról.\nKérem legyen szíves felvenni velem a kapcsolotat.\n\nÜdvözlettel:\n";
+        let msg;
+
+        if ($_GET['msg'] !== undefined) {
+            if ($_GET['msg'] === "bazis") {
+                msg = before + "Bázis" +after;
+            }
+
+            else if ($_GET['msg'] === "kiemelt") {
+                msg = before + "Kiemelt" +after;
+            }
+
+            else if ($_GET['msg'] === "exkluziv") {
+                msg = before + "Exklúzív" +after;
+            }
+
+            else if ($_GET['msg'] === "vip") {
+                msg = before + "VIP" +after;
+            }
+
+            else if ($_GET['msg'] === "vipextra") {
+                msg = before + "VIP Extra" +after;
+            }
+        }
+    </script>
+
 </head>
 
 <body>
@@ -72,12 +116,12 @@
                 </div>
                 <div class="form-group">
                     <label for="phone">Telefonszám</label>
-                    <input type="phone" class="form-control" id="phone" name="phone" aria-describedby="phone" required>
+                    <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="phone" required>
                     <small id="phonex" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
                     <label for="msg">Üzenet</label>
-                    <textarea id="msg" name="msg" class="form-control" rows="10" form="contactform" ></textarea>
+                    <textarea id="msg" name="msg" class="form-control" rows="10" form="contactform" >SZIA</textarea>
                     <small id="uzenet" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
@@ -94,6 +138,7 @@
                 <button type="submit" id="sendbtn" name="sendbtn" class="btn btn-primary">Üzenet küldése</button>
                 <p></p>
                 <div>
+                    <!--suppress HtmlDeprecatedAttribute -->
                     <iframe allowfullscreen="" frameborder="0"
                             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBXdwJ_SOvWDbcIj6upYiHDI-tnuGio4p4&amp;q=Eger Eszterházy tér 8&amp;zoom=18
     " width="100%" height="400" style="
@@ -108,8 +153,13 @@
             <div class="col-1"></div>
         </div>
     </div>
+</div>
 
 
 </body>
+<script>
+    let msgbox = document.querySelector("#msg");
+    msgbox.innerHTML = msg;
+</script>
 
 </html>

@@ -32,11 +32,11 @@ if (isset($_POST['sendbtn'])) {
         echo '<p>Kérlem figyeljen oda, a "Nem vagyok rorot" jelölőnégyzet kitöltésekor.</p>';
     } else if ($captcha_success->success==true) {
 
-        $to = "nagy.agnes@ctk.hu";
+        $to = "trener.nagy.agnes@gmail.com";
         $subject = "EgerTárs - ".$_POST['name'];
 
         $message = "
-            <html>
+            <html lang='hu'>
                 <head>
                     <title>EgerTárs Kapcsolat felévtel</title>
                 </head>
@@ -69,7 +69,8 @@ if (isset($_POST['sendbtn'])) {
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
 // More headers
-        $headers .= 'From: '.$_POST['name'].'<'.$_POST['email'].'>' . "\r\n";
+        $headers .= 'From: CTK Eger Kapcsolat <mailserver@fiko.hu> '. " \r\n";
+        $headers .= 'Reply-To: '.$_POST['name'].'<'.$_POST['email'].'>' . "\r\n";
         $headers .= 'Sender: mailserver@fiko.hu' . "\r\n";
 
         mail($to, $subject, $message, $headers);
