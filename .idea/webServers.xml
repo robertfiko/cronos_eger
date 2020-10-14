@@ -9,6 +9,20 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="ee87c818-4054-43a6-88b7-bd90429fab3a" name="ctk egertars.hu" url="http://ftp.fiko.hu">
+        <fileTransfer host="ftp.fiko.hu" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="b1b48c90-0a5b-4455-849d-1959caf464d2" name="ctk egertarskereso.hu" url="http://ftp.fiko.hu">
+        <fileTransfer host="ftp.fiko.hu" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

@@ -2,6 +2,20 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="Always" serverName="ftp.fiko.hu">
     <serverData>
+      <paths name="ctk egertars.hu">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/egertars_main_egertars" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="ctk egertarskereso.hu">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/egertarskereso_main_egertarskereso" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="ftp.fiko.hu">
         <serverdata>
           <mappings>
