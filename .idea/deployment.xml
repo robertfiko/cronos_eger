@@ -19,7 +19,7 @@
       <paths name="ftp.fiko.hu">
         <serverdata>
           <mappings>
-            <mapping deploy="/fiko_sub_ctk" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/egertarskereso_main_egertarskereso" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
